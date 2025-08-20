@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     const span = document.getElementsByClassName("close")[0];
+    alert (1)
 
     // Gère l'ouverture de la modale au clic sur une image
     const images = document.querySelectorAll('.gallery img');

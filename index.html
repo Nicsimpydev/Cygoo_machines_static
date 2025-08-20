@@ -4,82 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cygraform srl - Machines à vendre</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Styles personnalisés pour affiner le design */
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #2c3e50;
+            --text-color: #363636;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hero.is-primary {
+            background-color: var(--primary-color);
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .image-gallery figure {
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .image-gallery figure:hover {
+            transform: scale(1.03);
+        }
+
+        .modal-content.is-image {
+            max-width: 80%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Cygraform srl</h1>
-            <p class="subtitle">Machines professionnelles à vendre ou à donner moyennant enlèvement</p>
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1 has-text-white">
+                    Cygraform srl
+                </h1>
+                <h2 class="subtitle is-3 has-text-white">
+                    Machines professionnelles à vendre ou à donner
+                </h2>
+            </div>
         </div>
-    </header>
+    </section>
 
     <main class="container">
+
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered">Guillotine à papier</h2>
+                <div class="content is-medium">
+                    <p>
+                        Cette guillotine à papier est un outil de coupe de précision robuste, idéal pour les ateliers d'impression ou les bureaux de grande envergure. Conçue pour gérer d'épaisses liasses de papier avec une grande efficacité, elle garantit des coupes nettes et précises à chaque utilisation. Elle est mise à disposition pour enlèvement, représentant une excellente opportunité pour toute entreprise cherchant à améliorer sa capacité de finition.
+                    </p>
+                </div>
+                <div class="image-gallery">
+                    <figure class="image is-4by3">
+                        <img src="http://googleusercontent.com/image_generation_content/0" alt="Guillotine à papier">
+                    </figure>
+                    <figure class="image is-4by3">
+                        <img src="https://via.placeholder.com/600x450.png?text=Guillotine+Vue+2" alt="Guillotine vue 2">
+                    </figure>
+                    <figure class="image is-4by3">
+                        <img src="https://via.placeholder.com/600x450.png?text=Guillotine+Vue+3" alt="Guillotine vue 3">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered">Pentographe</h2>
+                <div class="content is-medium">
+                    <p>
+                        Ce pentographe est une pièce de machinerie finement conçue, parfaite pour le traçage et la gravure de motifs détaillés. Sa construction précise en laiton et en bois dur permet une reproduction fidèle des designs à l'échelle, un atout pour les métiers d'art ou l'ingénierie de précision. Bien entretenu, il est prêt à être utilisé par un nouvel artisan.
+                    </p>
+                </div>
+                <div class="image-gallery">
+                    <figure class="image is-4by3">
+                        <img src="http://googleusercontent.com/image_generation_content/1" alt="Pentographe professionnel">
+                    </figure>
+                    <figure class="image is-4by3">
+                        <img src="https://via.placeholder.com/600x450.png?text=Pentographe+Vue+2" alt="Pentographe vue 2">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered">Photograveuse</h2>
+                <div class="content is-medium">
+                    <p>
+                        Cette photograveuse est un équipement lourd et fiable, conçu pour le processus d'insolation de plaques de gravure. Avec son système de tambour rotatif et ses commandes précises, elle est parfaite pour la création de plaques pour l'impression typographique ou la reproduction artistique. Elle est proposée pour enlèvement pour ceux qui souhaitent récupérer cette machine spécialisée.
+                    </p>
+                </div>
+                <div class="image-gallery">
+                    <figure class="image is-4by3">
+                        <img src="http://googleusercontent.com/image_generation_content/2" alt="Photograveuse professionnelle">
+                    </figure>
+                    <figure class="image is-4by3">
+                        <img src="https://via.placeholder.com/600x450.png?text=Photograveuse+Vue+2" alt="Photograveuse vue 2">
+                    </figure>
+                    <figure class="image is-4by3">
+                        <img src="https://via.placeholder.com/600x450.png?text=Photograveuse+Vue+3" alt="Photograveuse vue 3">
+                    </figure>
+                </div>
+            </div>
+        </section>
         
-        <section class="machine">
-            <h2>Guillotine à papier</h2>
-            <p class="description">
-                Cette guillotine à papier industrielle est un outil de coupe de précision robuste, 
-                idéal pour les ateliers d'impression ou les bureaux de grande envergure. 
-                Conçue pour gérer d'épaisses liasses de papier avec une grande efficacité, 
-                elle garantit des coupes nettes et précises à chaque utilisation. 
-                Elle est mise à disposition pour enlèvement, représentant une excellente 
-                opportunité pour toute entreprise cherchant à améliorer sa capacité de finition.
-            </p>
-            <div class="gallery" id="gallery-guillotine">
-                <img src="http://googleusercontent.com/image_generation_content/0" alt="Guillotine à papier professionnelle" data-full="http://googleusercontent.com/image_generation_content/0">
-                </div>
-        </section>
-
-        <section class="machine">
-            <h2>Pentographe</h2>
-            <p class="description">
-                Ce pentographe est une pièce de machinerie finement conçue, 
-                parfaite pour le traçage et la gravure de motifs détaillés. 
-                Sa construction précise en laiton et en bois dur permet une reproduction 
-                fidèle des designs à l'échelle, un atout pour les métiers d'art ou l'ingénierie 
-                de précision. Bien entretenu, il est prêt à être utilisé par un 
-                nouvel artisan.
-            </p>
-            <div class="gallery" id="gallery-pentographe">
-                <img src="http://googleusercontent.com/image_generation_content/1" alt="Pentographe professionnel" data-full="http://googleusercontent.com/image_generation_content/1">
-                </div>
-        </section>
-
-        <section class="machine">
-            <h2>Photograveuse</h2>
-            <p class="description">
-                Cette photograveuse est un équipement lourd et fiable, 
-                conçu pour le processus d'insolation de plaques de gravure. 
-                Avec son système de tambour rotatif et ses commandes précises, 
-                elle est parfaite pour la création de plaques pour l'impression 
-                typographique ou la reproduction artistique. Elle est proposée 
-                pour enlèvement pour ceux qui souhaitent récupérer cette machine 
-                spécialisée.
-            </p>
-            <div class="gallery" id="gallery-photograveuse">
-                <img src="http://googleusercontent.com/image_generation_content/2" alt="Photograveuse professionnelle" data-full="http://googleusercontent.com/image_generation_content/2">
-                </div>
-        </section>
-
     </main>
 
-    <footer>
-        <div class="container">
-            <p>Pour plus d'informations ou pour organiser l'enlèvement, contactez-nous.</p>
-            <p>Contact : <a href="mailto:votre.email@cygraform.com">votre.email@cygraform.com</a></p>
+    <footer class="footer">
+        <div class="container has-text-centered">
+            <p>
+                <strong>Pour plus d'informations ou pour organiser un enlèvement,</strong> veuillez nous contacter.
+            </p>
+            <p>
+                <a href="mailto:contact@cygraform.com" class="has-text-info">
+                    <span class="icon is-small"><i class="fas fa-envelope"></i></span>
+                    contact@cygraform.com
+                </a>
+            </p>
         </div>
     </footer>
 
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
