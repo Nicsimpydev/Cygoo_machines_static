@@ -1,139 +1,88 @@
+/* Styles personnalisés pour un design inspiré des années 50 */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
-    --accent-color: #e74c3c;
-    --text-color: #333;
-    --background-color: #ecf0f1;
-    --light-gray: #f9f9f9;
+    --vintage-blue: #34495e;
+    --vintage-cream: #f4f0e7;
+    --vintage-maroon: #8b2b3a;
+    --vintage-teal: #1f6a6c;
+    --text-color-dark: #363636;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-    color: var(--text-color);
-    line-height: 1.6;
+    font-family: 'Roboto Slab', serif;
+    background-color: var(--vintage-cream);
+    color: var(--text-color-dark);
+    /* Ajoute une légère texture de papier pour un effet vintage */
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0h100v100H0z" fill="var(--vintage-cream)"/><path d="M0 0h100v1H0zM0 99h100v1H0zM0 0v100h1zM99 0v100h1z" fill="#ccc" opacity="0.1"/></g></svg>');
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+.hero.is-primary {
+    background-color: var(--vintage-maroon);
 }
 
-header {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.title, .subtitle {
+    font-family: 'Playfair Display', serif;
 }
 
-header h1 {
-    font-weight: 700;
-    font-size: 3em;
-    margin: 0;
+.title {
+    letter-spacing: 2px;
 }
 
 .subtitle {
-    font-weight: 300;
-    font-size: 1.2em;
-    opacity: 0.8;
-}
-
-.machine {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    margin-top: 30px;
-}
-
-.machine h2 {
-    color: var(--secondary-color);
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 10px;
-    font-size: 2.2em;
     font-weight: 400;
 }
 
-.description {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 25px;
+.section h2.title {
+    color: var(--vintage-teal);
+    border-bottom: 3px solid var(--vintage-teal);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-.gallery {
+.box {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.image-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+    /* Force l'affichage sur 2 colonnes */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
-.gallery img {
+.gallery-item {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
+    /* Retire la hauteur fixe et garantit que l'image est entièrement visible */
+    height: auto; 
+    object-fit: contain; 
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 5px solid var(--vintage-cream);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+.gallery-item:hover {
+    transform: translateY(-5px);
 }
 
-footer {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: var(--secondary-color);
+.footer {
+    background-color: var(--vintage-blue);
+    color: var(--vintage-cream);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.footer a {
     color: white;
-    margin-top: 40px;
-}
-
-footer a {
-    color: #fff;
     text-decoration: underline;
-    font-weight: 700;
 }
 
 /* Styles pour la modale */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
+.modal-content.is-clipped {
+    overflow: visible;
 }
-
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    margin-top: 10vh;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+.modal-content img {
+    max-height: 80vh;
+    width: auto;
 }

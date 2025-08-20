@@ -1,28 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Sélectionne la modale et les éléments nécessaires
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-    const span = document.getElementsByClassName("close")[0];
-    alert (1)
+    // Sélection des éléments
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalClose = document.querySelector('.modal-close');
+    const galleryItems = document.querySelectorAll('.gallery-item');
 
-    // Gère l'ouverture de la modale au clic sur une image
-    const images = document.querySelectorAll('.gallery img');
-    images.forEach(img => {
-        img.addEventListener('click', function() {
-            modal.style.display = "block";
-            modalImg.src = this.dataset.full;
+    // Ajout d'un événement 'click' sur chaque image de la galerie
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            modalImage.src = item.src;
+            modal.classList.add('is-active');
         });
     });
 
-    // Gère la fermeture de la modale au clic sur le bouton 'x'
-    span.onclick = function() { 
-        modal.style.display = "none";
+    // Gestion de la fermeture de la modale
+    function closeModal() {
+        modal.classList.remove('is-active');
     }
 
-    // Gère la fermeture de la modale au clic en dehors de l'image
-    modal.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+        // Ferme la modale si on clique sur l'arrière-plan
+        if (event.target.classList.contains('modal-background')) {
+            closeModal();
         }
-    }
+    });
+
+    // Fermeture avec la touche 'Echap'
+    document.addEventListener('keydown', (event) => {
+        if(event.key === "Escape") {
+            closeModal();
+        }
+    });
 });

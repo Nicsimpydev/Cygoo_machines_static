@@ -3,50 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cygraform srl - Machines à vendre</title>
+    <title>Cygraform srl</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* Styles personnalisés pour affiner le design */
-        :root {
-            --primary-color: #34495e;
-            --secondary-color: #2c3e50;
-            --text-color: #363636;
-        }
-
+        /* Styles personnalisés */
         body {
-            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
         }
 
         .hero.is-primary {
-            background-color: var(--primary-color);
+            background-color: #363636;
         }
 
-        .section h2 {
-            border-bottom: 2px solid #e74c3c;
+        .section h2.title {
+            color: #363636;
+            border-bottom: 2px solid #3273dc;
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
             gap: 1rem;
         }
-
-        .image-gallery figure {
+        
+        /* Conteneur de l'image principale pour un affichage avec fond */
+        .main-image-container {
+            width: 100%;
+            max-height: 500px;
+            background-color: #f0f0f0; /* Fond pour combler l'espace */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
             cursor: pointer;
-            transition: transform 0.2s ease-in-out;
         }
         
-        .image-gallery figure:hover {
-            transform: scale(1.03);
+        .main-image-container img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
         }
 
-        .modal-content.is-image {
-            max-width: 80%;
-            height: auto;
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .thumbnails img {
+            width: 100%;
+            height: 100px; /* Hauteur fixe pour les miniatures */
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s ease-in-out;
+        }
+        
+        .thumbnails img:hover {
+            border-color: #3273dc;
+        }
+
+        /* Styles de la modale */
+        .modal-content-wrapper {
+            position: relative;
+        }
+
+        .modal-image {
+            max-width: 90%;
+            max-height: 90vh;
+            display: block;
+            margin: auto;
+            object-fit: contain;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .modal-nav.prev-btn {
+            left: 1rem;
+        }
+
+        .modal-nav.next-btn {
+            right: 1rem;
+        }
+        
+        .footer {
+            background-color: #363636;
+            color: #f5f5f5;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
         }
     </style>
 </head>
@@ -54,7 +119,7 @@
 
     <section class="hero is-primary is-bold">
         <div class="hero-body">
-            <div class="container">
+            <div class="container has-text-centered">
                 <h1 class="title is-1 has-text-white">
                     Cygraform srl
                 </h1>
@@ -68,23 +133,24 @@
     <main class="container">
 
         <section class="section">
-            <div class="container">
-                <h2 class="title is-2 has-text-centered">Guillotine à papier</h2>
-                <div class="content is-medium">
+            <div class="container box">
+                <h2 class="title is-2 has-text-centered">Massicot</h2>
+                <div class="content is-medium has-text-justified">
                     <p>
-                        Cette guillotine à papier est un outil de coupe de précision robuste, idéal pour les ateliers d'impression ou les bureaux de grande envergure. Conçue pour gérer d'épaisses liasses de papier avec une grande efficacité, elle garantit des coupes nettes et précises à chaque utilisation. Elle est mise à disposition pour enlèvement, représentant une excellente opportunité pour toute entreprise cherchant à améliorer sa capacité de finition.
+                        Ce massicot est une machine professionnelle robuste, conçue pour la coupe précise de grandes quantités de papier. Son mécanisme manuel et sa construction en fonte lui confèrent une grande fiabilité, idéale pour les travaux de finition en imprimerie ou en atelier. Malgré son ancienneté, cet équipement est une pièce d'histoire fonctionnelle, prête à servir un nouvel utilisateur.
                     </p>
                 </div>
-                <div class="image-gallery">
-                    <figure class="image is-4by3">
-                        <img src="http://googleusercontent.com/image_generation_content/0" alt="Guillotine à papier">
-                    </figure>
-                    <figure class="image is-4by3">
-                        <img src="https://via.placeholder.com/600x450.png?text=Guillotine+Vue+2" alt="Guillotine vue 2">
-                    </figure>
-                    <figure class="image is-4by3">
-                        <img src="https://via.placeholder.com/600x450.png?text=Guillotine+Vue+3" alt="Guillotine vue 3">
-                    </figure>
+                <div class="product-gallery" data-machine="massicot">
+                    <div class="main-image-container">
+                        <img src="images/Massicot_1.jpg" alt="Vue principale du massicot">
+                    </div>
+                    
+                    <div class="thumbnails">
+                        <img src="images/Massicot_1.jpg" alt="Vue principale du massicot">
+                        <img src="images/Massicot_2.jpg" alt="Détail du volant">
+                        <img src="images/Massicot_3.jpg" alt="Vue de côté">
+                        <img src="images/Massicot_4.jpg" alt="Détail de la lame">
+                    </div>
                 </div>
             </div>
         </section>
@@ -92,20 +158,28 @@
         <hr>
 
         <section class="section">
-            <div class="container">
-                <h2 class="title is-2 has-text-centered">Pentographe</h2>
-                <div class="content is-medium">
+            <div class="container box">
+                <h2 class="title is-2 has-text-centered">Pantographe</h2>
+                <div class="content is-medium has-text-justified">
                     <p>
-                        Ce pentographe est une pièce de machinerie finement conçue, parfaite pour le traçage et la gravure de motifs détaillés. Sa construction précise en laiton et en bois dur permet une reproduction fidèle des designs à l'échelle, un atout pour les métiers d'art ou l'ingénierie de précision. Bien entretenu, il est prêt à être utilisé par un nouvel artisan.
+                        Cette machine est un **pantographe de gravure** fabriqué par **Hunter-Penrose Ltd**, une entreprise britannique historique spécialisée dans l'équipement pour les arts graphiques et la photogravure. Les plaques de la machine indiquent qu'elle a été fournie par **L. Geerts Matériel pour les Arts Graphiques**, un distributeur belge, ce qui confirme son marché de l'époque. 
+                    </p>
+                    <p>
+                        Ces machines étaient utilisées pour graver des dessins, des logos et des textes sur des plaques de métal à partir d'un modèle plus grand. L'état actuel montre l'usure du temps, mais elle reste une pièce d'équipement fascinante pour les collectionneurs ou pour ceux qui s'intéressent aux techniques d'impression traditionnelles.
                     </p>
                 </div>
-                <div class="image-gallery">
-                    <figure class="image is-4by3">
-                        <img src="http://googleusercontent.com/image_generation_content/1" alt="Pentographe professionnel">
-                    </figure>
-                    <figure class="image is-4by3">
-                        <img src="https://via.placeholder.com/600x450.png?text=Pentographe+Vue+2" alt="Pentographe vue 2">
-                    </figure>
+                <div class="product-gallery" data-machine="pantographe">
+                    <div class="main-image-container">
+                        <img src="images/Pantographe_1.jpg" alt="Vue générale de la machine">
+                    </div>
+                    
+                    <div class="thumbnails">
+                        <img src="images/Pantographe_1.jpg" alt="Vue générale de la machine">
+                        <img src="images/Pantographe_4.jpg" alt="Logo de Hunter-Penrose Ltd">
+                        <img src="images/Pantographe_2.jpg" alt="Détail du système de courroie">
+                        <img src="images/Pantographe_5.jpg" alt="Détail de la poulie et de la courroie">
+                        <img src="images/Pantographe_3.jpg" alt="Plaque du distributeur L. Geerts">
+                    </div>
                 </div>
             </div>
         </section>
@@ -113,42 +187,117 @@
         <hr>
 
         <section class="section">
-            <div class="container">
+            <div class="container box">
                 <h2 class="title is-2 has-text-centered">Photograveuse</h2>
-                <div class="content is-medium">
+                <div class="content is-medium has-text-justified">
                     <p>
                         Cette photograveuse est un équipement lourd et fiable, conçu pour le processus d'insolation de plaques de gravure. Avec son système de tambour rotatif et ses commandes précises, elle est parfaite pour la création de plaques pour l'impression typographique ou la reproduction artistique. Elle est proposée pour enlèvement pour ceux qui souhaitent récupérer cette machine spécialisée.
                     </p>
                 </div>
-                <div class="image-gallery">
-                    <figure class="image is-4by3">
-                        <img src="http://googleusercontent.com/image_generation_content/2" alt="Photograveuse professionnelle">
-                    </figure>
-                    <figure class="image is-4by3">
-                        <img src="https://via.placeholder.com/600x450.png?text=Photograveuse+Vue+2" alt="Photograveuse vue 2">
-                    </figure>
-                    <figure class="image is-4by3">
-                        <img src="https://via.placeholder.com/600x450.png?text=Photograveuse+Vue+3" alt="Photograveuse vue 3">
-                    </figure>
+                <div class="product-gallery" data-machine="photograveuse">
+                    <div class="main-image-container">
+                        <img src="images/photograveuse_1.png" alt="Photograveuse professionnelle">
+                    </div>
+
+                    <div class="thumbnails">
+                        <img src="images/photograveuse_2.png" alt="Photograveuse professionnelle">
+                        <img src="images/photograveuse_3.png" alt="Photograveuse vue 2">
+                        <img src="images/photograveuse_4.png" alt="Photograveuse vue 3">
+                        <img src="images/photograveuse_5.png" alt="Photograveuse vue 3">
+                    </div>
                 </div>
             </div>
         </section>
         
     </main>
 
-    <footer class="footer">
-        <div class="container has-text-centered">
+    <footer class="footer has-text-centered">
+        <div class="container">
             <p>
                 <strong>Pour plus d'informations ou pour organiser un enlèvement,</strong> veuillez nous contacter.
             </p>
             <p>
                 <a href="mailto:contact@cygraform.com" class="has-text-info">
-                    <span class="icon is-small"><i class="fas fa-envelope"></i></span>
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
                     contact@cygraform.com
                 </a>
             </p>
         </div>
     </footer>
 
+    <div id="image-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content is-clipped modal-content-wrapper">
+            <p class="image">
+                <img id="modal-image" src="" alt="Image agrandie" class="modal-image">
+            </p>
+            <button class="modal-nav prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="modal-nav next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalClose = document.querySelector('.modal-close');
+            const modalPrevBtn = document.querySelector('.modal-nav.prev-btn');
+            const modalNextBtn = document.querySelector('.modal-nav.next-btn');
+
+            let currentImages = [];
+            let currentIndex = 0;
+            
+            // Fonction pour ouvrir la modale avec l'image cliquée
+            function openModal(imageSrc, imagesList) {
+                currentImages = imagesList;
+                currentIndex = imagesList.findIndex(img => img === imageSrc);
+                modalImage.src = imageSrc;
+                modal.classList.add('is-active');
+            }
+
+            // Événements pour les galeries
+            const galleries = document.querySelectorAll('.product-gallery');
+            galleries.forEach(gallery => {
+                const images = Array.from(gallery.querySelectorAll('img')).map(img => img.src);
+                
+                gallery.querySelectorAll('.main-image-container img').forEach(img => {
+                    img.addEventListener('click', () => openModal(img.src, images));
+                });
+
+                gallery.querySelectorAll('.thumbnails img').forEach(img => {
+                    img.addEventListener('click', () => openModal(img.src, images));
+                });
+            });
+
+            // Navigation dans la modale
+            modalPrevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+                modalImage.src = currentImages[currentIndex];
+            });
+
+            modalNextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % currentImages.length;
+                modalImage.src = currentImages[currentIndex];
+            });
+
+            // Fermeture de la modale
+            function closeModal() {
+                modal.classList.remove('is-active');
+            }
+            
+            modalClose.addEventListener('click', closeModal);
+            modal.addEventListener('click', (event) => {
+                if (event.target.classList.contains('modal-background')) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('keydown', (event) => {
+                if(event.key === "Escape") {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
