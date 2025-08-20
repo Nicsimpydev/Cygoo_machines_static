@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cygraform srl - Machines à vendre</title>
+    <style>
+        /* Styles CSS pour un design sobre et élégant */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .machine {
+            margin-bottom: 40px;
+        }
+        .machine h2 {
+            color: #34495e;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 2em;
+        }
+        .machine p {
+            font-size: 1.1em;
+            color: #666;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            margin-top: 30px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Cygraform srl</h1>
+    </header>
+
+    <main>
+        <section class="machine">
+            <h2>Guillotine à papier</h2>
+            <p>
+                Description détaillée de la guillotine à papier. Indiquez ses spécifications, son état, 
+                les dimensions, et toute information pertinente pour un acheteur potentiel. 
+                Mentionnez si elle est fonctionnelle, si des pièces sont manquantes, etc. 
+                Ceci est l'endroit parfait pour donner envie de la récupérer.
+            </p>
+            <div class="gallery">
+                <img src="images/guillotine-1.jpg" alt="Guillotine à papier - Vue 1">
+                <img src="images/guillotine-2.jpg" alt="Guillotine à papier - Vue 2">
+                <img src="images/guillotine-3.jpg" alt="Guillotine à papier - Vue 3">
+                <img src="images/guillotine-4.jpg" alt="Guillotine à papier - Vue 4">
+            </div>
+        </section>
+
+        <section class="machine">
+            <h2>Pentographe</h2>
+            <p>
+                Description du pentographe. Décrivez son usage, son état actuel, 
+                et les raisons pour lesquelles il est mis à disposition.
+                Ajoutez ici toutes les informations qui pourraient être utiles.
+            </p>
+            <div class="gallery">
+                <img src="images/pentographe-1.jpg" alt="Pentographe - Vue 1">
+                <img src="images/pentographe-2.jpg" alt="Pentographe - Vue 2">
+                <img src="images/pentographe-3.jpg" alt="Pentographe - Vue 3">
+            </div>
+        </section>
+
+        <section class="machine">
+            <h2>Photograveuse</h2>
+            <p>
+                Description de la photograveuse. Détaillez ses caractéristiques techniques, 
+                son histoire au sein de votre entreprise, et pourquoi vous souhaitez vous en séparer.
+                Indiquez les éventuels accessoires ou consommables qui sont inclus.
+            </p>
+            <div class="gallery">
+                <img src="images/photograveuse-1.jpg" alt="Photograveuse - Vue 1">
+                <img src="images/photograveuse-2.jpg" alt="Photograveuse - Vue 2">
+                <img src="images/photograveuse-3.jpg" alt="Photograveuse - Vue 3">
+                <img src="images/photograveuse-4.jpg" alt="Photograveuse - Vue 4">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pour plus d'informations ou pour organiser un enlèvement, veuillez nous contacter.</p>
+        <p>Contact : <a href="mailto:votre.email@example.com">votre.email@example.com</a></p>
+    </footer>
+</div>
+
+</body>
+</html>
